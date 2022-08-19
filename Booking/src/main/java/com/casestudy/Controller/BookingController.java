@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,19 +23,19 @@ public class BookingController {
 	@Autowired
 	private BookingService bookingService;
 	
-	@RequestMapping("/getAllTickets")
+	@GetMapping("/getAllTickets")
 	public List<Booking> getAllTickets() {
 		return bookingService.getAllTickets();
 	}
 
-	@RequestMapping(method=RequestMethod.POST, value="/reserve")
+	@PostMapping("/reserve")
 	public String reserveTicket(@RequestBody Booking book) {
 		bookingService.reserveTicket(book);
 		return "Ticket Reserved !";
 
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/cancel/{pnr}")
+	@DeleteMapping("/cancel/{pnr}")
 	public String cancelTicket(@PathVariable long pnr) {
 		bookingService.cancelTicket(pnr);
 		return "Ticket Cancelled !";

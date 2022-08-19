@@ -4,7 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,39 +24,39 @@ public class TrainController {
 	@Autowired
 	private TrainService trainService;
 	
-	@RequestMapping("/trainDetails")
+	@GetMapping("/trainDetails")
 	public List<TrainDetails> getAllTrains(){
 		return trainService.getAllTrains();
 	}
 	
-	@RequestMapping("/trainSearchByName/{search}")
+	@GetMapping("/trainSearchByName/{search}")
 	public List<TrainDetails> getTrainByName(@PathVariable String search){
 		return trainService.getTrainByName(search);
 	}
 	
-	@RequestMapping("/trainSearchById/{search}")
+	@GetMapping("/trainSearchById/{search}")
 	public TrainDetails getTrainById(@PathVariable String search) {
 		return trainService.getTrainById(search);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/addTrains")
+	@PostMapping("/addTrains")
 	public String addTrains(@RequestBody TrainDetails trainDetails) {
 		trainService.addTrains(trainDetails);
 		return "Train Added Successfully ! ";
 	}
 	
-	@RequestMapping("/checkTrains/{source}/{destination}/{date}")
+	@GetMapping("/checkTrains/{source}/{destination}/{date}")
 	public List<TrainDetails> checkTrains(@PathVariable("source") String source, @PathVariable("destination") String destination, @PathVariable("date") String date){
 		return trainService.checkTrains(source, destination, date);
 		
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/updateTrain")
+	@PutMapping("/updateTrain")
 	public void updateTrain(@RequestBody TrainDetails trainDetails) {
 		trainService.updateTrain(trainDetails);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/removeTrain/{trainId}")
+	@DeleteMapping("/removeTrain/{trainId}")
 	public String removeTrain(@PathVariable String trainId) {
 		return trainService.removeTrain(trainId);
 	}

@@ -57,7 +57,7 @@ function Home() {
                 </Link>
 
                 
-                <Link to="/login"><Card bg="cyan">
+                <Link to="/check"><Card bg="cyan">
                     <Card.Img variant="top" src="https://ichef.bbci.co.uk/live-experience/cps/1248/cpsprodpb/vivo/live/images/2016/8/2/888294a2-33e3-4040-9e9d-ebe7b39e5a7c.jpg" />
                     <Card.Body>
                     <Card.Title className='text-grey'><FontAwesomeIcon icon={faTicketAlt}/> BOOK YOUR TICKET NOW!</Card.Title>

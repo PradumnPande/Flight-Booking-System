@@ -10,7 +10,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,14 +44,14 @@ public class UsersController {
 	@Autowired
 	private BCryptPasswordEncoder bCrpytPassword;
 	
-	@RequestMapping(method=RequestMethod.POST, value="/register")
+	@PostMapping("/register")
 	public String registerUser(@RequestBody Users user) {
 		String encodedPassword = bCrpytPassword.encode(user.getPassword());
 		user.setPassword(encodedPassword);
 		return usersService.registerUser(user);		
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/authenticate")
+	@PostMapping("/authenticate")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
 		try {
 		authenticationManager.authenticate(
@@ -65,28 +69,28 @@ public class UsersController {
 		return ResponseEntity.ok(new AuthenticationResponse(jwt, role));
 		
 	}
-	@RequestMapping(method=RequestMethod.GET, value="/showProfile")
+	@GetMapping("/showProfile")
 	public Users showProfile() {
 		return usersService.showProfile();
 	}
 	
-	@RequestMapping("/getUser/{username}")
+	@GetMapping("/getUser/{username}")
 	public Users getUser(@PathVariable String username) throws UserNotFoundException {
 		return usersService.getUser(username);
 	}
 	
-	@RequestMapping("/myBookings")
+	@GetMapping("/myBookings")
 	public List<Booking> showMyBookings(){
 		return usersService.showMyBookings();
 		
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/updateUser")
+	@PutMapping("/updateUser")
 	public void updateUser(@RequestBody Users user) {
 		usersService.updateUser(user);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/removeUser/{username}")
+	@DeleteMapping("/removeUser/{username}")
 	public String removeUser(@PathVariable String username) throws UserNotFoundException {
 		return usersService.removeUser(username);
 	}

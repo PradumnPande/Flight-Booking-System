@@ -8,7 +8,7 @@ function Dashboard() {
     return (
         <div className="container">
             <div>
-                <Jumbotron className="container text-center bg-info text-white jumbotron" style={{marginTop : '30px'}}>
+                <Jumbotron className="container text-center bg-teal text-white jumbotron" style={{marginTop : '30px'}}>
                     <h2 style={{fontWeight:'bold'}}><strong><FontAwesomeIcon icon = {faCrown} /> Admin Dashboard</strong></h2>
                     
                 </Jumbotron>

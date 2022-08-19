@@ -33,15 +33,13 @@ export class SearchTrainByName extends Component {
        const {search} = this.state
         return (
             <div>
-                    <Carousel style={{width : "100%"}}>
-                    <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="https://i.pinimg.com/originals/e2/e0/28/e2e028048eb932451b2d5feb3185732d.jpg" height="550px"
+                        src="https://cdna.artstation.com/p/assets/images/images/012/351/378/original/vladyslav-silchuk-vladyslav-silchuk-as-wildwest-gif2.gif?1534348236" height="550px"
                         alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h1 class="text-warning" style={{fontWeight : "bold"}}><strong>Search Your Train Here!</strong></h1>
+                            <h1 class="text-warning" style={{fontWeight : "bold", fontSize:'45px'}}><strong>Search Your Train Here!</strong></h1>
                             <p className="container" style={{width : "60%"}}>
                                 <form onSubmit={this.submitHandler}>
                                     <input class='text-white' type="text" name="search" id="search" value={search} autocomplete="off" placeholder="Search Name..." onChange={this.changeHandler}></input>
@@ -49,8 +47,6 @@ export class SearchTrainByName extends Component {
                                 </form>
                             </p>
                         </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
 
 
                 {        

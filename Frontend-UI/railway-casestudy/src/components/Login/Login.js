@@ -44,7 +44,7 @@ export class Login extends Component {
             <Row className="justify-content-md-center">
                 <Col xs={5}>
                     {error && <Alert variant="danger">{error}</Alert>}
-                    <Card className={"border border-dark bg-dark text-white"} style={{marginTop : '100px', width : '80%', marginLeft : '80px'}}>
+                    <Card className={"border border-dark bg-teal text-white"} style={{marginTop : '100px', width : '80%', marginLeft : '80px'}}>
                         <Card.Header>
                             <FontAwesomeIcon icon={faSignInAlt}/> Login
                         </Card.Header>
@@ -56,7 +56,7 @@ export class Login extends Component {
                                             <InputGroup.Text><FontAwesomeIcon icon={faEnvelope}/></InputGroup.Text>
                                         </InputGroup.Prepend>
                                         <FormControl required autoComplete="off" type="text" name="username" id="username" value={username} onChange={this.changeHandler}
-                                            className={"bg-dark text-white"} placeholder="Enter Username"/>
+                                            className={"bg-lime text-white"} placeholder="Enter Username"/>
                                     </InputGroup>
                                 </Form.Group>
                             </Form.Row>
@@ -67,7 +67,7 @@ export class Login extends Component {
                                             <InputGroup.Text><FontAwesomeIcon icon={faLock}/></InputGroup.Text>
                                         </InputGroup.Prepend>
                                         <FormControl required autoComplete="off" type="password" name="password" value={password} onChange={this.changeHandler}
-                                            className={"bg-dark text-white"} placeholder="Enter Password"/>
+                                            className={"bg-lime text-white"} placeholder="Enter Password"/>
                                     </InputGroup>
                                 </Form.Group>
                             </Form.Row>
