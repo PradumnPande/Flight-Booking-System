@@ -99,7 +99,7 @@ export class AddTrain extends Component {
           if (this.state.duration < 1 || this.state.duration > 2399) {
             er.durationError = "Enter valid Duration!";
           }
-          if (this.state.seatsLeft < 1 || this.state.seatsLeft > 4) {
+          if (this.state.seatsLeft < 100 || this.state.seatsLeft > 600) {
             er.seatsLeftError = "Enter valid Seats!";
           }
           if (this.state.generalFare < 5 || this.state.generalFare >10000) {
@@ -149,7 +149,7 @@ export class AddTrain extends Component {
             <div>
                 {this.state.response === '' ?
                 <div className="container">
-                    <Card bg="light" style={{width : '80%', marginLeft : '100px', marginTop : '20px'}}>
+                    <Card bg="info" style={{width : '80%', marginLeft : '100px', marginTop : '20px'}}>
                         <Card.Header className="text-center" style={{height : '50px', fontSize: '22px', color: 'darkred'}}>ADD A NEW TRAIN!</Card.Header>
                     <Card.Body>
                         <Form onSubmit={this.handleSubmit}>
@@ -266,15 +266,12 @@ export class AddTrain extends Component {
                             <Form.Control type="number" name="seatsLeft" id="seatsLeft" value={seatsLeft} autocomplete="off" onChange={this.changeHandler} />
                         </Form.Group>
 
-    
                         <div>
-                            
-                            <input className="text-center"
+                            <input
                         type="submit"
                         class="btnRegister"
                         value="ADD Train"
-                        onClick={this.submitHandler}
-                      />
+                        onClick={this.submitHandler}/>
                         </div>
                     </Form>
                     </Card.Body>

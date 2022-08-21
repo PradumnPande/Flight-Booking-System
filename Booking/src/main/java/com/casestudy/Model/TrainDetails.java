@@ -1,7 +1,5 @@
 package com.casestudy.Model;
 
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 
 public class TrainDetails {

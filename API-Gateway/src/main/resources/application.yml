@@ -1,0 +1,28 @@
+eureka:
+  client:
+    register-with-eureka: true
+server:
+  port: 8080
+spring:
+        application:
+               name: API_Gateway             
+        cloud:
+          gateway:
+            globalcors:
+              corsConfigurations:'[/**]':
+                allowedOrigins: "http://localhost:3000"
+                allowedHeaders: "*"
+                allowedMethods: "*"
+            routes:
+            - id: Users
+              uri: http://localhost:8081
+              predicates:
+              - Path=/**
+            - id: TrainInformation
+              uri: http://localhost:8082
+              predicates:
+              - Path=/**
+            - id: Booking
+              uri: http://localhost:8083
+              predicates:
+              - Path=/**

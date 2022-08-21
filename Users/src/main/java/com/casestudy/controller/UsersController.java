@@ -2,6 +2,15 @@ package com.casestudy.controller;
 
 import java.util.List;
 
+import com.casestudy.exception.UserNotFoundException;
+import com.casestudy.model.Booking;
+import com.casestudy.model.Users;
+import com.casestudy.security.AuthenticationRequest;
+import com.casestudy.security.AuthenticationResponse;
+import com.casestudy.security.JwtUtil;
+import com.casestudy.security.MyUserDetailsService;
+import com.casestudy.service.UsersService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,18 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.casestudy.exception.UserNotFoundException;
-import com.casestudy.model.Booking;
-import com.casestudy.model.Users;
-import com.casestudy.security.AuthenticationRequest;
-import com.casestudy.security.AuthenticationResponse;
-import com.casestudy.security.JwtUtil;
-import com.casestudy.security.MyUserDetailsService;
-import com.casestudy.service.UsersService;
 
 @CrossOrigin
 @RestController

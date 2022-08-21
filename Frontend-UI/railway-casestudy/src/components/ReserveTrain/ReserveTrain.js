@@ -141,7 +141,7 @@ export class ReserveTrain extends Component {
                 {this.state.result === '' ?
                 <div className="container" style={{height : '90%'}}>
                     <Card bg="light" style={{marginTop : '30px', marginLeft : '115px', width : '70%'}}>
-                        <Card.Header className="text-center" style={{height : '60px', fontSize: '26px', color: 'darkred', backgroundColor : 'green'}}>RESERVE TRAIN!</Card.Header>
+                        <Card.Header className="text-center" style={{height : '60px', fontSize: '30px', color: 'orange', backgroundColor : 'black', fontWeight:'bold'}}>RESERVE TRAIN!</Card.Header>
                     <Card.Body>
                         <Form onSubmit={this.handleSubmit}>
                         <Form.Row>

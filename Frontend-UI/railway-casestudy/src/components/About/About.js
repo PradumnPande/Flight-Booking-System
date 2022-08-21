@@ -47,7 +47,7 @@ function About() {
                                 <li>It is an Online Railway Reservation Sytem</li>
                                 <li>Developed as a part of Java Full-Stack Training</li>
                                 <li>Future improvements and updates will be made</li>
-                                <li>Contact me via email : pandepraduman4@gmail.com</li>
+                                <li>Contact me via email : pandepraduman@gmail.com</li>
                             </ul>
                         </Card.Body>
                         <Card.Footer style={{backgroundColor:'orange'}}>
