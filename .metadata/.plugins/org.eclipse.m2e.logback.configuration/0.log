@@ -653,3 +653,10 @@
 2022-08-22 03:56:49,519 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-08-22 03:56:49,520 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-08-22 03:56:49,520 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\My Workspace 8\Booking\src\test\resources
+2022-08-22 04:00:42,479 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-08-22 04:00:42,479 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-08-22 04:00:42,480 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-08-22 04:00:42,482 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-08-22 04:00:42,484 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-08-22 04:00:42,484 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-08-22 04:00:42,484 [Worker-20: Launching Booking - BookingApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\My Workspace 8\Booking\src\test\resources

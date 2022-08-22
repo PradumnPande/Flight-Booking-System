@@ -80,12 +80,6 @@ public class UsersController {
 	@GetMapping("/myBookings")
 	public List<Booking> showMyBookings(){
 		return usersService.showMyBookings();
-		
-	}
-	
-	@PutMapping("/updateUser")
-	public void updateUser(@RequestBody Users user) {
-		usersService.updateUser(user);
 	}
 	
 	@DeleteMapping("/removeUser/{username}")
